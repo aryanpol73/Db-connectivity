@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ 'Edit Member' if member else 'Add Member' }}</h2>
+<form class="form" method="post">
+  <label>Name <input name="name" required value="{{ member.name if member else request.form.name }}"></label>
+  <label>Email <input name="email" type="email" required value="{{ member.email if member else request.form.email }}"></label>
+  <label>Phone <input name="phone" pattern="[0-9]{10}" title="10-digit number" value="{{ member.phone if member else request.form.phone }}"></label>
+  <div>
+    <button class="btn">Save</button>
+    <a href="{{ url_for('members') }}">Cancel</a>
+  </div>
+</form>
+{% endblock %}

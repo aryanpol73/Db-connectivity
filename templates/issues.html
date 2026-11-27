@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="toolbar">
+  <h2>Issued Books</h2>
+  <a class="btn" href="{{ url_for('issue_book') }}">+ Issue Book</a>
+</div>
+
+<table>
+  <tr><th>ID</th><th>Book</th><th>Member</th><th>Issue date</th><th>Due date</th><th>Status</th><th>Action</th></tr>
+  {% for i in issues %}
+  <tr>
+    <td>{{ i.issue_id }}</td>
+    <td>{{ i.title }}</td>
+    <td>{{ i.name }}</td>
+    <td>{{ i.issue_date }}</td>
+    <td>{{ i.due_date }}</td>
+    <td>
+      {% if i.return_date %}<span class="tag ok">Returned {{ i.return_date }}</span>
+      {% elif i.overdue %}<span class="tag bad">Overdue</span>
+      {% else %}<span class="tag">Issued</span>{% endif %}
+    </td>
+    <td>
+      {% if not i.return_date %}
+      <form method="post" action="{{ url_for('return_book', issue_id=i.issue_id) }}">
+        <button class="btn small">Return</button>
+      </form>
+      {% endif %}
+    </td>
+  </tr>
+  {% else %}
+  <tr><td colspan="7">No books issued yet.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}

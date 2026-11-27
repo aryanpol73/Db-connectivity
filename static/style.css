@@ -1,0 +1,49 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #f4f6fb; color: #222; }
+
+header { background: #1f3a68; color: #fff; padding: 14px 24px; }
+header h1 { margin: 0 0 10px; font-size: 22px; }
+nav a { color: #cfd9ee; text-decoration: none; margin-right: 18px; padding-bottom: 4px; }
+nav a.active, nav a:hover { color: #fff; border-bottom: 2px solid #ffc94d; }
+
+main { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+footer { text-align: center; color: #888; font-size: 13px; padding: 24px; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; }
+
+table { width: 100%; border-collapse: collapse; background: #fff; margin-top: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e6e9f0; }
+th { background: #e9eef8; font-size: 14px; }
+td.actions { display: flex; gap: 6px; }
+td.actions form { margin: 0; }
+
+.btn { background: #2d5ab4; color: #fff; border: none; padding: 8px 14px; border-radius: 5px;
+       cursor: pointer; text-decoration: none; font-size: 14px; display: inline-block; }
+.btn:hover { background: #1f3a68; }
+.btn.small { padding: 5px 10px; font-size: 13px; }
+.btn.danger { background: #c0392b; }
+
+.form { background: #fff; padding: 20px; max-width: 460px; display: flex; flex-direction: column;
+        gap: 14px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.form label { display: flex; flex-direction: column; font-weight: 600; font-size: 14px; gap: 4px; }
+.form input, .form select { padding: 8px; border: 1px solid #ccd; border-radius: 4px; font-size: 14px; }
+.form a, .search a { margin-left: 10px; }
+.note { color: #666; font-size: 13px; margin: 0; }
+
+.search { margin-top: 12px; display: flex; gap: 8px; align-items: center; }
+.search input { flex: 1; padding: 8px; border: 1px solid #ccd; border-radius: 4px; }
+
+.cards { display: flex; flex-wrap: wrap; gap: 14px; }
+.card { background: #fff; flex: 1; min-width: 150px; padding: 18px; border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0,0,0,.08); color: #555; }
+.card span { display: block; font-size: 30px; font-weight: 700; color: #1f3a68; }
+.card.warn span { color: #c0392b; }
+
+.flash { padding: 10px 14px; border-radius: 4px; margin-bottom: 14px; }
+.flash.success { background: #dff3e4; color: #1d6b34; }
+.flash.error { background: #fbe1df; color: #8e2a20; }
+
+.tag { padding: 3px 8px; border-radius: 10px; font-size: 12px; background: #e9eef8; }
+.tag.ok { background: #dff3e4; color: #1d6b34; }
+.tag.bad { background: #fbe1df; color: #8e2a20; }

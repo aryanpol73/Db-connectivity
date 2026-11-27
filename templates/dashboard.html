@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<div class="cards">
+  <div class="card"><span>{{ stats.books }}</span>Book titles</div>
+  <div class="card"><span>{{ stats.copies }}</span>Total copies</div>
+  <div class="card"><span>{{ stats.members }}</span>Members</div>
+  <div class="card"><span>{{ stats.issued }}</span>Books issued</div>
+  <div class="card warn"><span>{{ stats.overdue }}</span>Overdue</div>
+</div>
+
+<h3>Books by category</h3>
+<table>
+  <tr><th>Category</th><th>Titles</th><th>Copies</th></tr>
+  {% for c in categories %}
+  <tr><td>{{ c.category or '—' }}</td><td>{{ c.titles }}</td><td>{{ c.copies }}</td></tr>
+  {% else %}
+  <tr><td colspan="3">No books yet.</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
